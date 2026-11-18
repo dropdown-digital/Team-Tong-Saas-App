@@ -46,7 +46,7 @@ export function GuestRoom({
     <div className="live-club">
       <header className="live-header">
         <Link className="brand" href="/club">
-          <span className="crest">TT</span>TEAM TONG
+          <img src="/images/logo.jpg" alt="Team Tong" className="brand-logo-img" />TEAM TONG
         </Link>
         <Link
           className="button secondary"

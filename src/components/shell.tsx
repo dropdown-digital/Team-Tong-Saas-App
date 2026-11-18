@@ -11,11 +11,13 @@ import {
   ArrowUpRight,
   Shield,
   X,
+  Camera,
 } from "lucide-react";
 import { useClub } from "./provider";
 const links = [
   ["/", "Dashboard", LayoutDashboard],
   ["/upcoming", "Upcoming match", CalendarDays],
+  ["/gallery", "Match gallery", Camera],
   ["/club/draft-demo", "Try the live draft", Users],
   ["/matches", "Match history", History],
   ["/players", "Players", Users],
@@ -30,9 +32,11 @@ export function Shell({ children }: { children: React.ReactNode }) {
     <div className="app">
       <aside className="sidebar">
         <Link href="/" className="brand">
-          <span className="crest">
-            TT<span>★</span>
-          </span>
+          <img
+            src="/images/logo.jpg"
+            alt="Team Tong FC"
+            className="brand-logo-img"
+          />
           <span>
             TEAM TONG<small>FOOTBALL CLUB</small>
           </span>

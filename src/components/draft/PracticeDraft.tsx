@@ -85,7 +85,7 @@ export function PracticeDraft() {
     <div className="live-club">
       <header className="live-header">
         <Link href="/club" className="brand">
-          <span className="crest">TT</span>TEAM TONG
+          <img src="/images/logo.jpg" alt="Team Tong" className="brand-logo-img" />TEAM TONG
         </Link>
         <Link href="/club" className="button secondary">
           Back to rooms

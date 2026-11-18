@@ -6,8 +6,11 @@ import {
   CalendarDays,
   Trophy,
   Users,
+  Camera,
+  Sparkles,
 } from "lucide-react";
 import { useClub } from "./provider";
+import { GALLERY_MOMENTS } from "./gallery";
 import {
   Avatar,
   MatchCard,
@@ -178,6 +181,41 @@ export function Overview() {
           </div>
         </Panel>
       </div>
+
+      {/* Featured Match Memories & Humour Section */}
+      <section className="overview-gallery-section">
+        <div className="overview-gallery-header">
+          <div>
+            <span className="eyebrow">
+              <Camera size={14} className="inline mr-1" /> UNFILTERED TURF ARCHIVES
+            </span>
+            <h3>Match Memories &amp; Tong Banter</h3>
+            <p>From lifting trophies to mass hamstring cramps — our journey under the floodlights.</p>
+          </div>
+          <Link href="/gallery" className="button secondary">
+            Browse All 10 Moments <ArrowRight size={16} />
+          </Link>
+        </div>
+
+        <div className="overview-gallery-cards">
+          {GALLERY_MOMENTS.slice(0, 3).map((item) => (
+            <Link href="/gallery" key={item.id} className="overview-moment-card">
+              <div className="moment-img-wrap">
+                <img src={item.src} alt={item.title} loading="lazy" />
+                <span className="moment-badge">{item.badge}</span>
+              </div>
+              <div className="moment-content">
+                <h4>{item.title}</h4>
+                <p className="moment-humour">“{item.humourNote}”</p>
+                <div className="moment-meta">
+                  <span className="moment-tag">{item.tag}</span>
+                  <span className="moment-truth">{item.matchdayTruth}</span>
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
     </>
   );
 }
