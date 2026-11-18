@@ -1,0 +1,12 @@
+node_modules/
+.next/
+.env*
+*.tsbuildinfo
+
+# Private self-hosted club database and session records
+.data/
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+
+!.env.example
